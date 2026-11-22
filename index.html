@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔴 Kween's Red Light & FENtastic+ Guide 🔴🎬</title>
+    <i>*A Red Light FENtastic+ Centered Guide</i>
+    <title>🔴 Kween's Ultimate Red Light + FENtastic+ Guide 🔴🎬</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Red Light Theme */
             --primary: #C62828;
             --primary-light: #EF5350;
             --secondary: #FFFFFF;
@@ -18,9 +18,24 @@
             --card-bg: #1E1E1E;
             --section-bg: #2C2C2C;
             --url: #FFCA28;
+            --success-color: #70E4EF;
             --border-radius: 12px;
             --transition: all 0.3s ease;
             --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="light"] {
+            --primary: #B71C1C;
+            --primary-light: #C62828;
+            --secondary: #2c3e50;
+            --accent: #B71C1C;
+            --dark: #f5f7fa;
+            --darker: #e1e5eb;
+            --text: #2c3e50;
+            --card-bg: #ffffff;
+            --section-bg: #f0f4f8;
+            --url: #B71C1C;
+            --success-color: #1B5E20;
         }
 
         * {
@@ -38,6 +53,7 @@
             margin: 0 auto;
             padding: 20px;
             position: relative;
+            transition: background-color 0.5s ease;
         }
 
         header {
@@ -62,9 +78,10 @@
         }
 
         h1 {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2.8rem;
             margin-bottom: 10px;
-            color: var(--secondary);
+            color: #FFFFFF;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -115,6 +132,7 @@
         }
 
         .toc-title {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--primary-light);
@@ -162,7 +180,7 @@
 
         .toc-list .active {
             background: var(--primary);
-            color: var(--secondary);
+            color: #FFFFFF;
         }
 
         .theme-toggle {
@@ -183,6 +201,10 @@
             transform: translateY(-3px);
         }
 
+        .theme-toggle i {
+            font-size: 1.2rem;
+        }
+
         .content-container {
             flex: 3;
             min-width: 300px;
@@ -195,6 +217,7 @@
             margin-bottom: 35px;
             box-shadow: var(--box-shadow);
             border-left: 5px solid var(--primary);
+            position: relative;
             transition: transform 0.3s ease;
             scroll-margin-top: 20px;
         }
@@ -204,8 +227,9 @@
         }
 
         h2 {
+            font-family: 'Space Grotesk', sans-serif;
             background: linear-gradient(90deg, var(--primary), #8B0000);
-            color: var(--secondary);
+            color: #FFFFFF;
             padding: 12px 20px;
             border-radius: 50px;
             font-size: 1.8rem;
@@ -215,7 +239,8 @@
         }
 
         h3 {
-            color: var(--accent);
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary-light);
             font-size: 1.5rem;
             border-bottom: 2px dashed var(--primary);
             padding-bottom: 8px;
@@ -264,7 +289,7 @@
         }
 
         .success {
-            color: #70E4EF;
+            color: var(--success-color);
             font-weight: bold;
             text-align: center;
             font-size: 1.4rem;
@@ -272,7 +297,7 @@
             padding: 15px;
             background-color: rgba(112, 228, 239, 0.1);
             border-radius: 10px;
-            border: 1px dashed #70E4EF;
+            border: 1px dashed var(--success-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -325,7 +350,7 @@
         }
 
         .toggle-on {
-            color: #70E4EF;
+            color: var(--success-color);
             font-weight: bold;
         }
 
@@ -334,21 +359,15 @@
             font-weight: bold;
         }
 
-        .finale {
-            background: linear-gradient(135deg, var(--primary), #8B0000);
-            color: var(--secondary);
-            text-align: center;
-            padding: 40px;
-            border-radius: 20px;
-            margin-top: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border: 3px solid var(--accent);
+        .config-columns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .finale h2 {
-            background: none;
-            color: var(--secondary);
-            border: none;
+        .config-column {
+            flex: 1;
+            min-width: 300px;
         }
 
         .floating-buttons {
@@ -366,7 +385,7 @@
             height: 50px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), #8B0000);
-            color: var(--secondary);
+            color: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -378,6 +397,23 @@
 
         .floating-btn:hover {
             transform: translateY(-5px);
+        }
+
+        .finale {
+            background: linear-gradient(135deg, var(--primary), #8B0000);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 3px solid var(--accent);
+        }
+
+        .finale h2 {
+            background: none;
+            color: #FFFFFF;
+            border: none;
         }
 
         @media (max-width: 900px) {
@@ -422,8 +458,8 @@
     </div>
     
     <header id="top">
-        <h1>🔴 Kween's Red Light & FENtastic+ Guide 🔴🎬</h1>
-        <p class="subtitle">Your complete, straight-forward setup companion for the new Red Light era.</p>
+        <h1>🔴 Kween's Ultimate Red Light + FENtastic+ Guide 🔴🎬</h1>
+        <p class="subtitle">Your complete, straight-forward setup companion for Red Light and FENtastic+.</p>
     </header>
 
     <div class="theme-toggle" id="themeToggle">
@@ -436,13 +472,15 @@
             <h2 class="toc-title"><i class="fas fa-bookmark"></i> Navigation</h2>
             <ul class="toc-list">
                 <li><a href="#accounts">🔑 Accounts and Services</a></li>
-                <li><a href="#source">🏦 The Main Source</a></li>
-                <li><a href="#kodi">⚙️ Kodi Settings</a></li>
-                <li><a href="#install">🧱 Install Add-ons & Skin</a></li>
-                <li><a href="#redlight">🔴 Red Light Configuration</a></li>
-                <li><a href="#skin">🎨 Skin Configuration</a></li>
-                <li><a href="#extras">🏈 Extras (Live TV & Sports)</a></li>
-                <li><a href="#finish">✨ Finish Line</a></li>
+                <li><a href="#repositories">🏦 Repositories</a></li>
+                <li><a href="#step-a">🅰️ Kodi Install/Config</a></li>
+                <li><a href="#step-b">🅱️ Install from Red Wizard Repo</a></li>
+                <li><a href="#step-c">🔑 Red Light Accounts</a></li>
+                <li><a href="#step-d">⚙️ Red Light Config</a></li>
+                <li><a href="#step-e">🎨 Skin Config</a></li>
+                <li><a href="#step-f">✨ Final Skin Settings</a></li>
+                <li><a href="#step-g">🏈 Sports & Live TV</a></li>
+                <li><a href="#step-h">🗣️ Subtitles</a></li>
             </ul>
         </div>
 
@@ -452,256 +490,689 @@
                 <h2>🔑 Accounts and Services Needed</h2>
                 <div class="step">
                     <span class="command">📧 Email address</span><br/>
-                    (for registering and activating various services)
+                    (email for registering and activating various services. Gmail for Google TV)
                 </div>
                 <div class="step">
                     <span class="command">🔄 TraktTV</span><br/>
-                    <a class="url" href="https://trakt.tv">https://trakt.tv</a> (syncing watch history & watchlists). <strong>Recommended over SIMKL</strong> because Trakt saves your movie progress, while SIMKL marks movies as "Watched" the moment you start them.
+                    <a class="url" href="https://trakt.tv">https://trakt.tv</a> (syncing watch history and watchlists). We recommend Trakt over SIMKL because Trakt saves your progress on movies, while SIMKL marks a movie as "Watched" the moment you start it.
                 </div>
                 <div class="step">
-                    <span class="command">⚡ Real-Debrid</span><br/>
-                    <a class="url" href="https://real-debrid.com">https://real-debrid.com</a> (#1 choice, required for Red Light)
+                    <span class="command">💎 All Debrid (#1 Choice)</span><br/>
+                    <a class="url" href="https://alldebrid.com">https://alldebrid.com</a> (Primary debrid service for this guide. Free trial available.)
                 </div>
                 <div class="step">
-                    <span class="command">💎 All Debrid (Optional)</span><br/>
-                    <a class="url" href="https://alldebrid.com">https://alldebrid.com</a> (backup debrid service, 25G/7day free trial)
+                    <span class="command">⚡ Real-Debrid (Optional Backup)</span><br/>
+                    <a class="url" href="https://real-debrid.com">https://real-debrid.com</a> (Optional second debrid service. Due to recent DMCA and copyright issues, All Debrid is now the recommended first choice.)
                 </div>
                 <div class="step">
                     <span class="command">🎬 OMDB API</span><br/>
-                    <a class="url" href="https://omdbapi.com">omdbapi.com</a> (free API key for ratings)
+                    <a class="url" href="https://omdbapi.com">omdbapi.com</a> (free API key for ratings and extras)
                 </div>
                 <div class="step">
                     <span class="command">📋 MDBLIST API</span><br/>
-                    <a class="url" href="https://mdblist.com">mdblist.com</a> (free API key for ratings & lists)
+                    <a class="url" href="https://mdblist.com">mdblist.com</a> (free API key for ratings &amp; lists. Get your API key in Preferences.)
                 </div>
                 <div class="step">
-                    <span class="command">🗣️ OpenSubtitles (Optional)</span><br/>
-                    <a class="url" href="https://opensubtitles.com">opensubtitles.com</a> (for subtitles)
+                    <span class="command">🗣️ OpenSubtitles.com (Optional)</span><br/>
+                    <a class="url" href="https://opensubtitles.com">opensubtitles.com</a> *Optional. Our main subtitle add-on (a4kSubtitles) works without an account, but a free account gives you access to more sources.
                 </div>
                 <div class="step">
-                    <span class="command">📥 Kodi</span><br/>
-                    Download from <a class="url" href="https://kodi.tv/download">kodi.tv/download</a>, Google Play Store, or Microsoft Store.
+                    <span class="command">📥 Kodi Download</span><br/>
+                    Google Play Store, Microsoft Store on Xbox, or <a class="url" href="https://kodi.tv/download">https://kodi.tv/download</a>. Firestick Install, Kodi (Android 64BIT) needs to be 'Side-loaded' with the Downloader app.
                 </div>
                 <div class="note">
-                    <span class="important">PRO TIP:</span> Use an On-The-Go (OTG) cable and a mini keyboard to speed up installation. A Rii X8 is highly recommended.
+                    <span class="important">PRO TIP:</span> Attach an On-The-Go cable (OTG) &amp; Keyboard to your device to speed up installation and configuration time. It takes 3x as long without. I recommend the Rii X8 Wireless Mini Keyboard and any inexpensive OTG cable, both available on Amazon.
                 </div>
             </div>
 
-            <!-- THE MAIN SOURCE -->
-            <div class="section" id="source">
-                <h2>🏦 The Main Source: Red Wizard Repo</h2>
-                <div class="step">
-                    We will use <strong>one main source</strong> for almost everything. The Red Wizard Repo contains Red Light, Gears Scrapers, Cocoscrapers, FENtastic+, The Loop, YouTube, and more. This saves you from adding many separate sources.
-                </div>
-                <div class="step">
-                    <span class="command">Source URL:</span> <span class="url">https://repo.redwizard.xyz</span>
-                </div>
+            <!-- REPOSITORIES -->
+            <div class="section" id="repositories">
+                <h2>🏦 Repositories (To Find Them Later)</h2>
                 <div class="note">
-                    <span class="important">NOTE:</span> The Crew and Mad Titan Sports still require their own separate sources. We will add those later in the Extras section.
-                </div>
-                <h3><i class="fas fa-external-link-alt"></i> Separate Sources (For Later)</h3>
-                <div class="step">
-                    <span class="command">FENtastic+ Skin:</span> <span class="url">https://zaxxon709.github.io/repo/</span> (The 709 Repository) — This is the updated source for the FENtastic+ skin.
+                    <span class="important">NOTE:</span> Everything below is already available inside the <strong>Red Wizard Repo</strong> (<span class="url">https://repo.redwizard.xyz</span>). You don't need to add these separately to complete this guide. This list is here as a fallback in case the Red Wizard Repo ever goes down or stops supplying these add-ons later.
                 </div>
                 <div class="step">
-                    <span class="command">The Crew:</span> <span class="url">https://team-crew.github.io</span>
+                    <span class="command">🔗 Red Wizard (Main Repo)</span><br/>
+                    <a class="url" href="https://repo.redwizard.xyz/">https://repo.redwizard.xyz/</a>
                 </div>
                 <div class="step">
-                    <span class="command">Mad Titan Sports:</span> <span class="url">https://magnetic.website/repo</span>
+                    <span class="command">🔗 FENtastic+ Skin (709 Repo)</span><br/>
+                    <a class="url" href="https://zaxxon709.github.io/repo/">https://zaxxon709.github.io/repo/</a>
+                </div>
+                <div class="step">
+                    <span class="command">🔗 CocoScrapers</span><br/>
+                    <a class="url" href="https://cocojoe2411.github.io">https://cocojoe2411.github.io</a>
+                </div>
+                <div class="step">
+                    <span class="command">🔗 The Loop</span><br/>
+                    <a class="url" href="https://loopaddon.uk/theloop">https://loopaddon.uk/theloop</a>
+                </div>
+                <div class="step">
+                    <span class="command">🔗 Mad Titan Sports</span><br/>
+                    <a class="url" href="https://magnetic.website/repo">https://magnetic.website/repo</a>
+                </div>
+                <div class="step">
+                    <span class="command">🔗 The Crew</span><br/>
+                    <a class="url" href="https://team-crew.github.io">https://team-crew.github.io</a>
                 </div>
             </div>
-
-            <!-- KODI SETTINGS -->
-            <div class="section" id="kodi">
-                <h2>⚙️ A: Kodi Settings (Before Installing Add-ons)</h2>
+         
+            <!-- STEP A: KODI INSTALL -->
+            <div class="section" id="step-a">
+                <h2><span class="emoji">🅰️</span> A: Kodi Download/Install/Configuration</h2>
                 <div class="step">
-                    <span class="command">1. Open Kodi</span> and select the ⚙ <strong>Settings</strong> gear icon.
+                    <span class="command">1. Download &amp; Install</span> the latest Kodi build (Omega 21.2 as of today) to your Onn 4k TV, Xbox, PC, Fire TV or other target device. Google Play Store, Microsoft Store on Xbox, or <a class="url" href="https://kodi.tv/download">https://kodi.tv/download</a>. Firestick Install, Kodi (Android 64BIT) needs to be 'Side-loaded' with the Downloader app.
                 </div>
                 <div class="step">
-                    <span class="command">2. Enable Unknown Sources:</span> System > Add-ons > Unknown sources = <span class="toggle-on">ON</span>
+                    <span class="command">2. Open Kodi</span> and select the ⚙ <span class="command">Settings gear icon</span> in the top left corner of 🏡 Home Screen.
+                </div>
+                <div class="step">
+                    <span class="command">3. This is Kodi Settings</span>
                 </div>
                 
-                <h3><i class="fas fa-film"></i> Player Settings (Set to "Expert")</h3>
-                <div class="config-group">
-                    <div class="config-item"><span class="command">Player > Videos ></span> Adjust display refresh rate = <span class="toggle-off">Off</span></div>
-                    <div class="config-item"><span class="command">Player > Videos ></span> Sync playback to display = <span class="toggle-on">Enabled</span></div>
-                    <div class="config-item"><span class="command">Player > Videos ></span> Allow hardware acceleration = <span class="toggle-on">ON</span></div>
-                    <div class="config-item"><span class="command">Player > Videos ></span> Allow use DXVA video super resolution = <span class="toggle-off">OFF</span> <em>(Keep disabled unless you have high-end hardware like an NVIDIA RTX or Intel Arc GPU. It can cause playback issues on most streaming boxes.)</em></div>
+                <h3><i class="fas fa-film"></i> Player Settings</h3>
+                <div class="note">
+                    <span class="important">NOTE:</span> "Expert" MUST be selected to view and configure all settings. When you select the Player setting, click "Standard" in bottom left corner until "Expert" is selected.
                 </div>
-
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Player &gt; Videos &gt;</span> Adjust display refresh rate = <span class="toggle-off">Off</span></div>
+                    <div class="config-item"><span class="command">Player &gt; Videos &gt;</span> Sync playback to display = <span class="toggle-on">Enabled</span></div>
+                    <div class="config-item"><span class="command">Player &gt; Videos &gt;</span> Display 4:3 videos as = <span class="toggle-on">Stretch 16:9</span></div>
+                    <div class="config-item"><span class="command">Player &gt; Videos &gt;</span> Render method = <span class="toggle-on">Auto Detect</span> (<span class="toggle-on">DXVA on XBOX</span> for smooth playback)</div>
+                    <div class="config-item"><span class="command">Player &gt; Videos &gt;</span> Enable HQ scalers for scaling above = <span class="toggle-on">100%</span>. Try for at least <span class="toggle-on">70%</span> on older/weaker devices</div>
+                    <div class="config-item"><span class="command">Player &gt; Videos &gt;</span> Allow hardware acceleration = <span class="toggle-on">ON</span> (<span class="toggle-off">Off XBOX Only</span>)</div>
+                    <div class="config-item"><span class="command">Player &gt; Videos &gt;</span> Allow use DXVA video super resolution = <span class="toggle-off">OFF</span> (Keep disabled unless you have high-end hardware like an NVIDIA RTX or Intel Arc GPU. It can cause playback issues on most streaming boxes.)</div>
+                </div>
+                
+                <h3><i class="fas fa-language"></i> Player Language Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Player &gt; Language &gt;</span> Preferred audio language = <span class="toggle-on">English</span></div>
+                    <div class="config-item"><span class="command">Player &gt; Language &gt;</span> Prefer default audio streams = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Player &gt; Language &gt;</span> Preferred subtitle language = <span class="toggle-on">English</span> for always on (<span class="toggle-on">Forced only</span> = embedded by the title)</div>
+                </div>
+                
                 <h3><i class="fas fa-database"></i> Media Settings</h3>
                 <div class="config-group">
-                    <div class="config-item"><span class="command">Media > General ></span> Show parent folder items = <span class="toggle-off">Off</span></div>
-                    <div class="config-item"><span class="command">All other Media settings</span> are already set correctly by default. No further changes needed.</div>
+                    <div class="config-item"><span class="command">Media &gt; General &gt;</span> Show parent folder items = <span class="toggle-off">Off</span></div>
+                    <div class="config-item">All other Media settings are already set correctly by default. No further changes needed here.</div>
                 </div>
-
+                
+                <h3><i class="fas fa-globe"></i> Services Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Services &gt; General &gt;</span> Device name = Name your device or not 😁</div>
+                    <div class="config-item"><span class="command">Services &gt; Control &gt;</span> Allow remote control via HTTP = <span class="toggle-on">ON</span> (must set username &amp; password 1st)</div>
+                    <div class="config-item"><span class="command">Services &gt; Control &gt;</span> Allow remote control from applications on this system = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Services &gt; Control &gt;</span> Allow remote control from applications on other systems = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Services &gt; Control &gt;</span> Username and Password &gt; Choose &amp; Set up Username &amp; Password or not 😁</div>
+                    <div class="config-item"><span class="command">Services &gt; Caching &gt;</span> Memory Size = <span class="toggle-on">128 MB</span> (Xbox) &amp; Memory Size = <span class="toggle-on">32 MB</span> (Google TV, Fire TV, Onn 4k TV, etc.)</div>
+                    <div class="config-item"><span class="command">Services &gt; Caching &gt;</span> Read Factor = <span class="toggle-on">20x</span> (Xbox) &amp; Read Factor = <span class="toggle-on">10x</span> (Google TV, Fire TV, Onn 4k TV, etc.)</div>       
+                </div>
+                
+                <h3><i class="fas fa-desktop"></i> Interface Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Interface &gt; Regional</span> = Default or Configure to your preference</div>
+                    <div class="config-item"><span class="command">Interface &gt; Screensaver</span> = <span class="toggle-off">None</span></div>
+                </div>
+                
                 <h3><i class="fas fa-cog"></i> System Settings</h3>
                 <div class="config-group">
-                    <div class="config-item"><span class="command">System > Audio ></span> Output configuration = <span class="toggle-on">Best match</span></div>
-                    <div class="config-item"><span class="command">System > Add-ons ></span> Updates = <span class="toggle-off">Never check for updates</span></div>
-                </div>
-                <div class="success">
-                    <span class="emoji">✅</span> Kodi settings are ready!
-                </div>
-            </div>
-
-            <!-- INSTALL ADD-ONS & SKIN -->
-            <div class="section" id="install">
-                <h2>🧱 B: Install Add-ons & Skin (From Red Wizard Repo)</h2>
-                <div class="step">
-                    <span class="command">1. Add the Red Wizard Source:</span> Settings > File Manager > Add source > Enter <span class="url">https://repo.redwizard.xyz</span> > Name it "Red Repo".
-                </div>
-                <div class="step">
-                    <span class="command">2. Install the Repository:</span> Go back to Settings > Add-ons > Install from zip file > Select "Red Repo" > Select <code>repository.redwizard.zip</code>.
-                </div>
-                <div class="step">
-                    <span class="command">3. Install Gears Scrapers (Primary Scraper):</span> Install from repository > The Red Repo > <strong>Program add-ons</strong> > Gears Scrapers > Install.
-                </div>
-                <div class="step">
-                    <span class="command">4. Install Cocoscrapers (Backup Scraper):</span> In the same Program add-ons list, select <strong>Cocoscrapers</strong> > Install. <em>(Having both gives you a safety net.)</em>
-                </div>
-                <div class="step">
-                    <span class="command">5. Install Red Light:</span> Go back to The Red Repo > <strong>Video add-ons</strong> > Red Light > Install.
-                </div>
-                <div class="step">
-                    <span class="command">6. Install YouTube (for Trailers):</span> In Video add-ons, select <strong>YouTube</strong> > Install.
-                </div>
-                <div class="step">
-                    <span class="command">7. Install FENtastic+ Skin:</span> Go back to <strong>Install from repository</strong> > Choose <strong>709 Repository</strong> (you may need to add the source from the "Main Source" section first) > <strong>Look and feel</strong> > <strong>Skin</strong> > <strong>FENtastic</strong> > Install.
-                </div>
-                <div class="note">
-                    <span class="important">NOTE:</span> The Red Wizard Repo also contains a <strong>4K Subtitles</strong> repository. This is an alternative subtitle downloader. You can safely ignore it for now; your main subtitle setup will be handled later.
-                </div>
-                <div class="success">
-                    <span class="emoji">✅</span> All core add-ons and the skin are installed!
-                </div>
-            </div>
-
-            <!-- RED LIGHT CONFIGURATION -->
-            <div class="section" id="redlight">
-                <h2>🔴 C: Red Light Configuration</h2>
-                <div class="note">
-                    <span class="important">NOTE:</span> Red Light has many settings. We will focus on the essentials. You can fine-tune the rest later.
-                </div>
-                <h3><i class="fas fa-user"></i> Accounts Tab (The Essentials)</h3>
-                <div class="step">
-                    <span class="command">1. Authorize Trakt:</span> Open Red Light > Tools > Settings > <strong>Accounts</strong> > Trakt > Authorize. Follow the on-screen code at <span class="url">trakt.tv/activate</span>.
-                </div>
-                <div class="step">
-                    <span class="command">2. Authorize Real-Debrid:</span> Accounts > Real-Debrid > Authorize. Follow the code at <span class="url">real-debrid.com/devices</span>.
-                </div>
-                <div class="step">
-                    <span class="command">3. Enable Gears Scrapers:</span> Accounts > <strong>External Scrapers</strong> > Enable = <span class="toggle-on">ON</span> > Choose External Scrapers Module > Select <strong>Gears Scrapers</strong>.
-                </div>
-                <div class="step">
-                    <span class="command">4. (Optional) Enable Cocoscrapers as Backup:</span> If you want a second scraper, select <strong>Cocoscrapers Module</strong> from the same list. It will be used if Gears fails.
+                    <div class="config-item"><span class="command">System &gt; Audio &gt;</span> Audio output device = <span class="toggle-on">HDMI - Digital Output (Virtual Audio Device)</span> or best for your device</div>
+                    <div class="config-item"><span class="command">System &gt; Audio &gt;</span> Output configuration = <span class="toggle-on">Best match</span></div>
+                    <div class="config-item"><span class="command">System &gt; Input &gt;</span> Enable mouse and touch screen support = <span class="toggle-off">Off</span></div>
+                    <div class="config-item"><span class="command">System &gt; Add-ons &gt;</span> Updates = <span class="toggle-off">Never Check for Updates</span></div>
+                    <div class="config-item"><span class="command">System &gt; Add-ons &gt;</span> Show notifications = <span class="toggle-off">Off</span></div>
+                    <div class="config-item"><span class="command">System &gt; Add-ons &gt;</span> Unknown sources = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">System &gt; Add-ons &gt;</span> Update official add-ons from = <span class="toggle-on">Any repositories</span></div>
                 </div>
                 
-                <h3><i class="fas fa-sliders-h"></i> General Settings (Recommended)</h3>
+                <div class="success">
+                    <span class="emoji">✅</span> Kodi is now installed and configured!
+                </div>
+            </div>
+
+            <!-- STEP B: INSTALL FROM RED WIZARD REPO -->
+            <div class="section" id="step-b">
+                <h2><span class="emoji">🅱️</span> B: Install Everything from the Red Wizard Repo</h2>
+                <div class="note">
+                    <span class="important">WHY ONE REPO?</span> The Red Wizard Repo is a one-stop shop. It contains Red Light, Gears Scrapers, YouTube, plus sub-repos for FENtastic+ (709 Repo), The Loop, a4kSubtitles, and CocoScrapers. We'll install everything from here so you don't have to add five separate sources.
+                </div>
+                
+                <div class="step">
+                    <span class="command">1. Add the Red Wizard source:</span> Settings &gt; 📂 File Manager &gt; Add source &gt; Press Enter on &lt;None&gt; &gt; Type <span class="url">https://repo.redwizard.xyz/</span> &gt; Select OK &gt; Type "Red Wizard" as the name &gt; Press OK.
+                </div>
+                <div class="step">
+                    <span class="command">2. Install the Red Wizard repository:</span> Go back to Settings &gt; Add-ons &gt; Install from zip file &gt; Select "Red Wizard" &gt; Select the repository zip file &gt; Wait for the install confirmation.
+                </div>
+                <div class="step">
+                    <span class="command">3. Install the Red Light add-on:</span> Install from repository &gt; The Red Wizard Repo &gt; <strong>Video add-ons</strong> &gt; Red Light &gt; Install.
+                </div>
+                <div class="step">
+                    <span class="command">4. Install Gears Scrapers:</span> Install from repository &gt; The Red Wizard Repo &gt; <strong>Program add-ons</strong> &gt; Gears Scrapers &gt; Install. <em>(This is the primary scraper we'll enable in Step C.)</em>
+                </div>
+                <div class="step">
+                    <span class="command">5. Install YouTube (for Trailers):</span> Install from repository &gt; The Red Wizard Repo &gt; <strong>Video add-ons</strong> &gt; YouTube &gt; Install.
+                </div>
+                <div class="step">
+                    <span class="command">6. Install Cocoscrapers:</span> Install from repository &gt; The Red Wizard Repo &gt; <strong>Add-on repository</strong> &gt; CocoScrapers Repository (if it's not already listed) &gt; Then go to Install from repository &gt; CocoScrapers Repo &gt; Program add-ons &gt; CocoScrapers Module &gt; Install.
+                </div>
+                <div class="step">
+                    <span class="command">7. Install The Loop:</span> In the same Red Wizard Repo &gt; Add-on repository &gt; The Loop Repository (if not already listed) &gt; Then Install from repository &gt; Loop Repo &gt; Video add-ons &gt; The Loop &gt; Install. When asked to install additional add-ons, say YES to install <strong>Jet Proxy</strong> as well.
+                </div>
+                <div class="step">
+                    <span class="command">8. Install a4kSubtitles:</span> In the same Red Wizard Repo &gt; Add-on repository &gt; a4kSubtitles Repository &gt; Then Install from repository &gt; a4kSubtitles Repo &gt; Program add-ons &gt; a4kSubtitles &gt; Install.
+                </div>
+                <div class="step">
+                    <span class="command">9. Install FENtastic+ Skin:</span> In the same Red Wizard Repo &gt; Add-on repository &gt; 709 Repository (if not already listed) &gt; Then Install from repository &gt; 709 Repo &gt; <strong>Look and feel</strong> &gt; Skin &gt; FENtastic &gt; Install. Say YES to switch to this skin and keep it.
+                </div>
+                
+                <div class="note">
+                    <span class="important">YOUTUBE TRAILER NOTE:</span> The first time you play a trailer from inside Red Light, YouTube will launch its own setup wizard. Answer: Configure Settings? <strong>Yes</strong>. Recommended Values? <strong>Yes</strong>. Performance Settings? <strong>Yes</strong>. Language and Region? <strong>Yes</strong>. Subtitles? <strong>No</strong>. My Location? <strong>No</strong>. Minimal Listings? <strong>No</strong>. Refresh settings.xml? <strong>No</strong>. That's it—YouTube is ready.
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> Everything from the Red Wizard Repo is now installed!
+                </div>
+            </div>
+
+            <!-- STEP C: RED LIGHT ACCOUNTS -->
+            <div class="section" id="step-c">
+                <h2><span class="emoji">🔑</span> C: Red Light Accounts Tab Settings</h2>
+                <div class="note">
+                    <span class="important">NOTE:</span> Follow these in the order shown. Most settings live under the <strong>Accounts</strong> tab inside Red Light.
+                </div>
+                
+                <h3><i class="fas fa-user"></i> #1 Authorize Trakt</h3>
+                <div class="step">
+                    <span class="command">1. Settings &gt; Add-ons &gt; My add-ons &gt; Video Add-ons</span>
+                </div>
+                <div class="step">
+                    <span class="command">2. Select Red Light &gt; Open &gt; Tools</span>🛠
+                </div>
+                <div class="step">
+                    <span class="command">3. Select Settings</span>
+                </div>
+                <div class="step">
+                    <span class="command">4. Accounts &gt; TRAKT &gt; Select Authorize</span>
+                </div>
+                <div class="step">
+                    <span class="command">5. Note the Authorization code</span>
+                </div>
+                <div class="step">
+                    <span class="command">6. Using a web browser visit</span> <span class="url">trakt.tv/activate</span> and enter the authorization code (You must be logged into your Trakt account)
+                </div>
+                <div class="step">
+                    <span class="command">7. Select Yes</span> to authorize Red Light with Trakt.
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> Trakt is now integrated with Red Light!
+                </div>
+                
+                <h3><i class="fas fa-key"></i> #2 Authorize OMDB</h3>
+                <div class="step">
+                    <span class="command">1. Accounts &gt; OMDB &gt; API KEY</span>
+                </div>
+                <div class="step">
+                    <span class="command">2. Enter the Key code</span> emailed from omdbapi.com
+                </div>
+                <div class="step">
+                    <span class="command">3. Select OK</span>
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> OMDB is now enabled in Red Light!
+                </div>
+                
+                <h3><i class="fas fa-plug"></i> #3 Enable External Scrapers (Gears Primary, Coco Backup)</h3>
+                <div class="step">
+                    <span class="command">1. Accounts &gt; External Scrapers &gt; Enable = <span class="toggle-on">ON</span></span>
+                </div>
+                <div class="step">
+                    <span class="command">2. Accounts &gt; External Scrapers &gt; Choose External Scrapers Module &gt; Select Gears Scrapers</span>
+                </div>
+                <div class="step">
+                    <span class="command">3. Select OK</span>
+                </div>
+                <div class="note">
+                    <span class="important">WHY BOTH?</span> Gears Scrapers is the primary (actively maintained and recommended). CocoScrapers is installed as a backup. If Gears ever has issues, come back to this setting and swap to CocoScrapers. Having both installed means you're never stuck.
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> Gears Scrapers is now enabled (with CocoScrapers ready as backup)!
+                </div>
+                
+                <h3><i class="fas fa-cloud"></i> #4 Authorize All Debrid (#1 Choice)</h3>
+                <div class="step">
+                    <span class="command">1. Accounts tab &gt; All Debrid &gt; Select Authorize</span>
+                </div>
+                <div class="step">
+                    <span class="command">2. Note the Authorization code</span>
+                </div>
+                <div class="step">
+                    <span class="command">3. Using a web browser visit</span> <span class="url">alldebrid.com/pin</span> and enter the authorization code (You must be logged into your All Debrid account).
+                </div>
+                <div class="step">
+                    <span class="command">4. Back in Kodi</span>, you will see a success message. Press OK to continue.
+                </div>
+                <div class="step">
+                    <span class="command">5. Enable SEARCH CLOUD STORAGE and its categories</span>
+                </div>
+                <div class="step">
+                    <span class="command">6. Priority set to 1</span>
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> All Debrid is now integrated with Red Light!
+                </div>
+                
+                <h3><i class="fas fa-cloud"></i> #5 Authorize Real-Debrid (Optional Backup)</h3>
+                <div class="step">
+                    <span class="command">1. Accounts tab &gt; Real Debrid &gt; Select Authorize</span>
+                </div>
+                <div class="step">
+                    <span class="command">2. Note the Authorization code</span>
+                </div>
+                <div class="step">
+                    <span class="command">3. Using a web browser visit</span> <span class="url">real-debrid.com/devices</span>, Add a new Device &amp; enter the authorization code (You must be logged in to your Real-Debrid account).
+                </div>
+                <div class="step">
+                    <span class="command">4. Type "Red Light"</span> and press Set that name.
+                </div>
+                <div class="step">
+                    <span class="command">5. Back in Kodi</span>, you will see a success message. Press OK to continue.
+                </div>
+                <div class="step">
+                    <span class="command">6. Enable SEARCH CLOUD STORAGE and its categories</span>
+                </div>
+                <div class="step">
+                    <span class="command">7. Priority set to 2</span>
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> Real-Debrid is now integrated with Red Light as a backup!
+                </div>
+                <div class="step">
+                    <span class="command">8. Scroll 👈🏾 Left &amp; 🆙 up to the General Tab</span>
+                </div>
+            </div>
+
+            <!-- STEP D: RED LIGHT CONFIG -->
+            <div class="section" id="step-d">
+                <h2><span class="emoji">⚙️</span> D: Red Light Configuration</h2>
+                <div class="note">
+                    <span class="important">NOTE:</span> Red Light has many settings. The majority come down to your personal preference. Start with the recommendations below—you can always fine-tune later.
+                </div>
+                
+                <h3><i class="fas fa-cogs"></i> General Settings</h3>
                 <div class="config-group">
-                    <div class="config-item"><span class="command">Playback > Movies ></span> Auto Play = <span class="toggle-on">ON</span></div>
-                    <div class="config-item"><span class="command">Playback > Episodes ></span> Auto Play = <span class="toggle-on">ON</span></div>
-                    <div class="config-item"><span class="command">Playback > Episodes ></span> Autoplay next episode = <span class="toggle-on">ON</span></div>
-                    <div class="config-item"><span class="command">Results > Display ></span> Scraper timeout = <span class="toggle-on">5</span> (increase to 10 if you get no sources)</div>
+                    <div class="config-item"><span class="command">General &gt; Manage addon updates &gt;</span> Update action = <span class="toggle-off">Off</span></div>
+                    <div class="config-item"><span class="command">General &gt; Trakt Cache &gt;</span> Resync Interval (MINS) = <span class="toggle-on">600</span></div>
+                    <div class="config-item"><span class="command">General &gt; Trakt Cache &gt;</span> Refresh widgets after Trakt sync = <span class="toggle-on">ON</span></div>
                 </div>
-                <div class="success">
-                    <span class="emoji">✅</span> Red Light is now configured with the best scrapers!
-                </div>
-            </div>
-
-            <!-- SKIN CONFIGURATION -->
-            <div class="section" id="skin">
-                <h2>🎨 D: FENtastic+ Skin Configuration</h2>
-                <div class="step">
-                    <span class="command">1. Go to Settings > Skin settings</span>
-                </div>
-                <div class="step">
-                    <span class="command">2. Main menu items > Remake menus and widgets > OK</span> (This resets to a clean slate).
-                </div>
-                <div class="step">
-                    <span class="command">3. Set Movies Menu:</span> Main menu items > Movies > Set main menu path > <strong>Red Light</strong> > Movies > Use as path.
-                </div>
-                <div class="step">
-                    <span class="command">4. Set TV Shows Menu:</span> Main menu items > TV Shows > Set main menu path > <strong>Red Light</strong> > TV Shows > Use as path.
-                </div>
-                <div class="step">
-                    <span class="command">5. Add Widgets (Optional but Recommended):</span> Under Movies and TV Shows, select <strong>Set widgets</strong> > Widget 1 > <strong>Red Light</strong> > Movies/TV Shows > <strong>Trending</strong> > Use as path. Choose <strong>Poster</strong> for the display type.
-                </div>
-                <div class="step">
-                    <span class="command">6. Enter MDBLIST API Key:</span> Skin settings > <strong>Ratings/Trailers</strong> > Enter your MDBLIST API key and enable all options.
-                </div>
-                <div class="step">
-                    <span class="command">7. Set Search Provider:</span> Skin settings > <strong>Search</strong> > Set Search Provider = <strong>Red Light</strong>.
-                </div>
-                <div class="success">
-                    <span class="emoji">✅</span> Your FENtastic+ skin is now personalized!
-                </div>
-            </div>
-
-            <!-- EXTRAS -->
-            <div class="section" id="extras">
-                <h2>🏈 E: Extras (Live TV, Sports & Trailers)</h2>
                 
-                <h3><i class="fas fa-sync"></i> The Loop (Live TV & Sports)</h3>
+                <h3><i class="fas fa-star"></i> Features Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Features &gt; Special Open Actions &gt;</span> Movies = <span class="toggle-on">Both</span> (Opens Sets if available)</div>
+                    <div class="config-item"><span class="command">Features &gt; Special Open Actions &gt;</span> TV Shows = <span class="toggle-on">Open Extras</span></div>
+                </div>
+                
+                <h3><i class="fas fa-tv"></i> Content Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Content &gt; Sorting - Personal Lists &gt;</span> In Progress = <span class="toggle-on">Recently Watched</span></div>
+                    <div class="config-item"><span class="command">Content &gt; Sorting - Personal Lists &gt;</span> Watched = <span class="toggle-on">Recently Watched</span></div>
+                    <div class="config-item"><span class="command">Content &gt; Sorting - Personal Lists &gt;</span> Collection = <span class="toggle-on">Title</span></div>
+                    <div class="config-item"><span class="command">Content &gt; Sorting - Personal Lists &gt;</span> Watchlist = <span class="toggle-on">Date Added</span></div>
+                    <div class="config-item"><span class="command">Content &gt; Widgets &gt;</span> Hide next page item in widgets = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Content &gt; General &gt;</span> Paginate lists when available = <span class="toggle-off">Off</span> ( 'Within Add-on Only' = Lightens GPU load)</div>
+                    <div class="config-item"><span class="command">Content &gt; General &gt;</span> Watched (Still Airing) TV Shows Location = <span class="toggle-on">Watched</span></div>
+                    <div class="config-item"><span class="command">Content &gt; General &gt;</span> Show special episodes when available = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Content &gt; General &gt;</span> Flatten TV show season = <span class="toggle-on">If only one season</span></div>
+                    <div class="config-item"><span class="command">Content &gt; General &gt;</span> Include unaired media in Trakt Watchlists = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Content &gt; General &gt;</span> Control View Types within add-on = <span class="toggle-on">ON</span></div>
+                </div>
+                
+                <h3><i class="fas fa-list-ol"></i> Single Episode Lists</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Single Episode Lists &gt; General &gt;</span> Provide unwatched episode info = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Single Episode Lists &gt; Next episodes &gt;</span> Calculate content based on = <span class="toggle-on">Last Watched</span></div>
+                    <div class="config-item"><span class="command">Single Episode Lists &gt; Next episodes &gt;</span> Sort Type = <span class="toggle-on">Recently Watched</span></div>
+                    <div class="config-item"><span class="command">Single Episode Lists &gt; Next episodes &gt;</span> Sort Order = <span class="toggle-on">Descending</span></div>
+                    <div class="config-item"><span class="command">Single Episode Lists &gt; Next episodes &gt;</span> Limit Used Watched History = <span class="toggle-on">60</span></div>
+                    <div class="config-item"><span class="command">Single Episode Lists &gt; Next episodes &gt;</span> Include Trakt watchlist/favorites = <span class="toggle-on">Both</span></div>
+                    <div class="config-item"><span class="command">Single Episode Lists &gt; Next episodes &gt;</span> Include airdate in title = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Single Episode Lists &gt; Next episodes &gt;</span> Include unaired episodes when within 7 days = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Single Episode Lists &gt; Trakt Calendar &gt;</span> Show Future Days = <span class="toggle-on">14</span> or Default</div>
+                </div>
+                
+                <h3><i class="fas fa-search"></i> Results Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Results &gt; Display &gt;</span> Scraper timeout = <span class="toggle-on">5</span> (Increase or leave as Default if not getting any/enough sources)</div>
+                    <div class="config-item"><span class="command">Results &gt; General &gt;</span> Retry with all scrapers when no results = <span class="toggle-on">Auto</span></div>
+                    <div class="config-item"><span class="command">Results &gt; General &gt;</span> Ignore all filters when no results = <span class="toggle-on">Auto</span></div>
+                    <div class="config-item"><span class="command">Results &gt; Sorting &amp; Filtering &gt;</span> Max HEVC Quality = <span class="toggle-on">BEST FOR YOUR DEVICES</span> (Some devices cannot play or display HEVC, 3D, Dolby Vision &amp; will have to EXCLUDE)</div>
+                    <div class="config-item"><span class="command">Results &gt; Sorting &amp; Filtering &gt;</span> Filter results by size = <span class="toggle-off">Off</span> (Change filter preference with device &amp; internet speed)</div>
+                    <div class="config-item"><span class="command">Results &gt; Sorting &amp; Filtering &gt;</span> Max Autoplay HEVC Quality = <span class="toggle-on">Maximum quality your devices will allow</span></div>
+                </div>
+                
+                <h3><i class="fas fa-play-circle"></i> Playback Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Playback &gt; Movies &gt;</span> Auto Play = <span class="toggle-on">ON</span> (Off = Select Source of the title)</div>
+                    <div class="config-item"><span class="command">Playback &gt; Movies &gt;</span> Limit auto play quality = <span class="toggle-on">1080p</span> or best for your devices</div>
+                    <div class="config-item"><span class="command">Playback &gt; Movies &gt;</span> Automatically resume playback = <span class="toggle-off">Never</span></div>
+                    <div class="config-item"><span class="command">Playback &gt; Episodes &gt;</span> Auto play = <span class="toggle-on">ON</span> (Off = Select Source of the title)</div>
+                    <div class="config-item"><span class="command">Playback &gt; Episodes &gt;</span> Limit auto play quality = <span class="toggle-on">1080p</span> or best for your devices</div>
+                    <div class="config-item"><span class="command">Playback &gt; Episodes &gt;</span> Autoplay next episode = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Playback &gt; Episodes &gt;</span> When no interaction with window = <span class="toggle-on">Play</span></div>
+                    <div class="config-item"><span class="command">Playback &gt; Episodes &gt;</span> Next episode alert method = <span class="toggle-on">Window</span></div>
+                    <div class="config-item"><span class="command">Playback &gt; Episodes &gt;</span> Show alert after (%) playback = <span class="toggle-on">97</span></div>
+                    <div class="config-item"><span class="command">Playback &gt; Episodes &gt;</span> Use chapter info for alert when available = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Playback &gt; Episodes &gt;</span> Automatically resume playback = <span class="toggle-off">Never</span></div>
+                </div>
+                
                 <div class="step">
-                    <span class="command">1. From the Red Wizard Repo:</span> Install from repository > The Red Repo > Video add-ons > <strong>The Loop</strong> > Install.
+                    <span class="command"> 👓 SET VIEWS 👓</span>
                 </div>
                 <div class="step">
-                    <span class="command">2. Also install Jet Proxy:</span> It will be listed as an additional add-on. Install it for smooth playback.
-                </div>
-
-                <h3><i class="fas fa-football-ball"></i> The Crew (Sports)</h3>
-                <div class="step">
-                    <span class="command">1. Add Source:</span> File Manager > Add source > <span class="url">https://team-crew.github.io</span> > Name it "The Crew".
+                    <span class="command">1. Hit 🔙 back button into Red Light to Videos &gt; Red Light &gt; Tools &gt; Set Views</span>
                 </div>
                 <div class="step">
-                    <span class="command">2. Install Repo:</span> Install from zip file > The Crew > <code>repository.thecrew-x.x.zip</code>.
+                    <span class="command">2. Select Set Movies &gt; InfoWall</span> (or your preference) &amp; set view. Use the left button to open the hidden side menu &amp; select viewtype.
                 </div>
                 <div class="step">
-                    <span class="command">3. Install Add-on:</span> Install from repository > The Crew Repo > Video add-ons > The Crew > Install.
-                </div>
-                <div class="note">
-                    <span class="important">NOTE:</span> DaddyLive has been removed from this guide. The Crew remains for sports.
-                </div>
-
-                <h3><i class="fas fa-football-ball"></i> Mad Titan Sports</h3>
-                <div class="step">
-                    <span class="command">1. Add Source:</span> File Manager > Add source > <span class="url">https://magnetic.website/repo</span> > Name it "Mad Titan".
+                    <span class="command">3. Select Set TV Shows &gt; InfoWall</span> (or your preference) &amp; set view
                 </div>
                 <div class="step">
-                    <span class="command">2. Install Repo:</span> Install from zip file > Mad Titan > <code>repository.Magnetic-x.x.zip</code>.
-                </div>
-                <div class="step">
-                    <span class="command">3. Install Add-on:</span> Install from repository > Magnetic Repo > Video add-ons > Mad Titan Sports > Install.
-                </div>
-
-                <h3><i class="fas fa-play-circle"></i> YouTube (For Trailers)</h3>
-                <div class="step">
-                    <span class="command">Already installed in Step B.</span> The first time you play a trailer, YouTube will ask you to configure settings. Follow the on-screen wizard (English, region, recommended settings) and you're done. No SlyGuy needed.
+                    <span class="command">4. Select Set Episodes &gt; WideInfoWall</span> (or your preference) &amp; set view
                 </div>
                 <div class="success">
-                    <span class="emoji">✅</span> All extras are installed!
+                    <span class="emoji">✅</span> Red Light is complete. Now let's configure the skin!
                 </div>
             </div>
 
-            <!-- FINISH LINE -->
-            <div class="section" id="finish">
-                <h2>✨ F: Finish Line & Final Notes</h2>
-                <div class="step">
-                    <span class="command">Subtitles:</span> For subtitles, go to Settings > Add-ons > Install from repository > Kodi Add-on Repository > Subtitles > <strong>OpenSubtitles.com</strong> > Install. Configure it with your username and password.
-                </div>
-                <div class="step">
-                    <span class="command">4K Subtitles:</span> If you want an alternative, the <strong>4K Subtitles</strong> add-on is available in the Red Wizard Repo under Program add-ons. It works similarly to OpenSubtitles.
-                </div>
+            <!-- STEP E: SKIN CONFIG -->
+            <div class="section" id="step-e">
+                <h2><span class="emoji">🎨</span> E: FENtastic+ Skin Configuration (Widgets)</h2>
                 <div class="note">
-                    <span class="important">REMINDER:</span> SIMKL was considered for watch tracking, but Trakt is recommended because it saves your movie progress. SIMKL marks movies as finished as soon as you start them, which is not ideal for most users.
+                    <span class="important">TIP:</span> For a video tutorial on Widget Configuration &amp; more, visit: 
+                    <a class="url" href="https://odysee.com/@kodi_stuff:b/Create-a-kodi-Build-Fentastic-video-2:d">https://odysee.com/@kodi_stuff:b/Create-a-kodi-Build-Fentastic-video-2:d</a> Widgets start at about 5 min.
                 </div>
-                <div class="finale">
-                    <h2>🎉 YOU DID IT! 🎉</h2>
-                    <p style="font-size: 1.5em; margin-top: 20px;">YOUR RED LIGHT HOME THEATER IS COMPLETE!</p>
-                    <p style="font-size: 2.5em; margin-top: 20px;">🍿 🎬 💖</p>
-                    <p style="font-size: 1.8em; margin-top: 20px;"> -Kween</p>
+                <div class="step">
+                    <span class="command">1. Go back to the ⚙ Settings menu</span>
                 </div>
+                <div class="step">
+                    <span class="command">2. Select Skin settings</span>
+                </div>
+                <div class="step">
+                    <span class="command">3. Main menu items &gt; select Remake menus and widgets &gt; select OK</span>
+                </div>
+                
+                <div class="config-columns">
+                    <div class="config-column">
+                        <h3><i class="fas fa-film"></i> Movies Configuration</h3>
+                        <div class="step">
+                            <span class="command">4. Main menu items &gt; Movies &gt; select Set main menu path &gt; Red Light &gt;&gt; Use Red Light as path &gt; Rename to Movies &gt; select OK for Movies</span>
+                        </div>
+                        <div class="step">
+                            <span class="command">5. Main menu items &gt; Movies &gt; select Set widgets &gt; Widget 1: &gt; Red Light &gt;&gt; Movies &gt;&gt; Trending &gt;&gt; Use Trending as path &gt; select Ok &gt; Choose widget display type &gt; Poster</span>
+                        </div>
+                        <div class="step">
+                            <span class="command">6. Widget 2: &gt; Red Light &gt;&gt; Movies &gt;&gt; Genres &gt;&gt; Use Genres as path &gt; select OK &gt; Category &gt; Make Genres a stacked widget? Yes &gt; Landscape</span>
+                        </div>
+                    </div>
+                    
+                    <div class="config-column">
+                        <h3><i class="fas fa-tv"></i> TV Shows Configuration</h3>
+                        <div class="step">
+                            <span class="command">7. Main menu items &gt; TV Shows &gt; select Set main menu path &gt; Red Light &gt;&gt; TV Shows &gt;&gt; Use TV Shows as path &gt; select Enter &gt; select OK for TV Shows</span>
+                        </div>
+                        <div class="step">
+                            <span class="command">8. Main menu items &gt; TV Shows &gt; select Set widgets &gt; Widget 1: &gt; Red Light &gt;&gt; TV Shows &gt;&gt; Trending &gt;&gt; Use Trending as path &gt; select OK &gt; Choose widget display type &gt; Poster</span>
+                        </div>
+                        <div class="step">
+                            <span class="command">9. Widget 2: &gt; Red Light &gt;&gt; TV Shows &gt;&gt; Networks &gt;&gt; Use Networks as path &gt; select OK &gt; Category &gt; Make Networks a stacked widget? Yes &gt; Landscape</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="note">
+                    <span class="important">TIP:</span> You can play around and add more widgets to any of the categories you find in Red Light!
+                </div>
+                
+                <h3><i class="fas fa-ban"></i> Disable Unused Menu Items</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Disable:</span> Custom 1</div>
+                    <div class="config-item"><span class="command">Disable:</span> Custom 2</div>
+                    <div class="config-item"><span class="command">Disable:</span> Custom 3</div>
+                    <div class="config-item"><span class="command">Disable:</span> Music</div>
+                    <div class="config-item"><span class="command">Disable:</span> Music videos</div>
+                    <div class="config-item"><span class="command">Disable:</span> TV</div>
+                    <div class="config-item"><span class="command">Disable:</span> Radio</div>
+                    <div class="config-item"><span class="command">Disable:</span> Pictures</div>
+                    <div class="config-item"><span class="command">Disable:</span> Videos</div>
+                    <div class="config-item"><span class="command">Disable:</span> Weather</div>
+                </div>
+            </div>
+
+            <!-- STEP F: FINAL SKIN SETTINGS -->
+            <div class="section" id="step-f">
+                <h2><span class="emoji">✨</span> F: FENtastic+ Final Skin Settings</h2>
+                <div class="note">
+                    <span class="important">TIP:</span> These settings will Enhance and Complete Kodi for a Clean Streamlined-Streaming Service
+                </div>
+                
+                <h3><i class="fas fa-cog"></i> General Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">General &gt; Enable:</span> Use slide animations</div>
+                    <div class="config-item"><span class="command">General &gt; Enable:</span> Enable auto scrolling for plot &amp; review</div>
+                    <div class="config-item"><span class="command">General &gt; Enable:</span> Show media flags</div>
+                </div>
+                
+                <h3><i class="fas fa-sliders-h"></i> Options Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Options &gt; Enable:</span> Enable alternate info panel</div>
+                    <div class="config-item"><span class="command">Options &gt; Enable:</span> Show countdown timer for stacked widget load delay</div>
+                    <div class="config-item"><span class="command">Options &gt; Enable:</span> Enable focus animations</div>
+                    <div class="config-item"><span class="command">Options &gt; Enable:</span> Enable icon silhouettes for category widgets</div>
+                    <div class="config-item"><span class="command">Options &gt; Enable:</span> Disable color studio logos</div>
+                </div>
+                
+                <h3><i class="fas fa-star"></i> Ratings/Trailers</h3>
+                <div class="step">
+                    <span class="command">1. Ratings/Trailers &gt; Enter MDbList API Key</span> (You would've gotten it from mdblist.com)
+                </div>
+                <div class="step">
+                    <span class="command">2. Select OK</span>
+                </div>
+                <div class="step">
+                    <span class="command">3. Ratings/Trailers &gt; ENABLE ALL OPTIONS!</span>
+                </div>
+                
+                <h3><i class="fas fa-search"></i> Search Settings</h3>
+                <div class="step">
+                    <span class="command">1. Search &gt; Set Search Provider = Red Light</span>💡
+                </div>
+                <div class="step">
+                    <span class="command">2. Search &gt; ENABLE ALL OPTIONS!</span>
+                </div>
+                
+                <h3><i class="fas fa-image"></i> Artwork Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Artwork &gt;</span> Show media fanart as background = <span class="toggle-on">On</span></div>
+                    <div class="config-item"><span class="command">Artwork &gt;</span> background brightness = <span class="toggle-on">Low</span></div>
+                    <div class="config-item"><span class="command">Artwork &gt;</span> fanart brightness = <span class="toggle-on">Highest</span></div>
+                </div>
+                
+                <h3><i class="fas fa-desktop"></i> On Screen Display</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">On screen display &gt;</span> Automatically close video OSD = <span class="toggle-on">On</span></div>
+                    <div class="config-item"><span class="command">On screen display &gt;</span> Video OSD autoclose time (seconds) = <span class="toggle-on">4 Default</span> or your choice</div>
+                </div>
+                
+                <div class="success">
+                    <span class="emoji">✅</span> FENtastic Skin &amp; Red Light for Kodi are complete! You may start watching movies &amp; TV immediately <i>OR</i> continue below for the Sports packages &amp; Subtitles.
+                </div>
+            </div>
+
+            <!-- STEP G: SPORTS & LIVE TV -->
+            <div class="section" id="step-g">
+                <h2><span class="emoji">🏈</span> G: Live Sports Packages</h2>
+                <div class="note">
+                    <span class="important">TIP:</span> For the Live TV & Sports Add-ons to work, these Dependencies are <b>NON-NEGOTIABLE:</b> InputStream Helper .0.6.1+ and Jet Extractors 3.1.6
+                </div>
+                
+                <h3><i class="fas fa-users"></i> The Crew Installation</h3>
+                <div class="step">
+                    <span class="command">1. Go to the ⚙ Settings menu</span>
+                </div>
+                <div class="step">
+                    <span class="command">2. Select 📂 File Manager</span>
+                </div>
+                <div class="step">
+                    <span class="command">3. Select Add source</span>
+                </div>
+                <div class="step">
+                    <span class="command">4. Press Enter on &lt;None&gt;</span>
+                </div>
+                <div class="step">
+                    <span class="command">5. Type</span> <span class="url">https://team-crew.github.io</span> in the text field.
+                </div>
+                <div class="step">
+                    <span class="command">6. Select OK</span> ✔
+                </div>
+                <div class="step">
+                    <span class="command">7. Type "The Crew"</span> in the bottom media source name text field.
+                </div>
+                <div class="step">
+                    <span class="command">8. Press OK</span> to add the source.
+                </div>
+                <div class="step">
+                    <span class="command">9. Go back to the Settings menu</span> and select Add-ons (You may have to hit the back button multiple times)
+                </div>
+                <div class="step">
+                    <span class="command">10. Install from zip file</span>
+                </div>
+                <div class="step">
+                    <span class="command">11. Select The Crew</span>
+                </div>
+                <div class="step">
+                    <span class="command">12. Select repository.thecrew.x.x.zip</span>
+                </div>
+                <div class="step">
+                    <span class="command">13. Install from repository</span>
+                </div>
+                <div class="step">
+                    <span class="command">14. Select The Crew Repo</span>
+                </div>
+                <div class="step">
+                    <span class="command">15. Select Video Add-ons</span>
+                </div>
+                <div class="step">
+                    <span class="command">16. Select "The Crew"</span>
+                </div>
+                <div class="step">
+                    <span class="command">17. Select Install &amp; OK</span>
+                </div>
+                <div class="step">
+                    <span class="command">18. Select The Crew &gt; Configure &gt; Navigation tab &gt; 18+ Adult Playground &gt; Password "lol"</span>
+                </div>
+                <div class="step">
+                    <span class="command">19. Select OK</span> ✔
+                </div>
+                <div class="step">
+                    <span class="command">20. Back out of The Crew completely</span>
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> The Crew is now installed
+                </div>
+                
+                <h3><i class="fas fa-football-ball"></i> Mad Titan Sports Installation 🏉</h3>
+                <div class="step">
+                    <span class="command">1. Go back to 📂 File Manager</span>
+                </div>
+                <div class="step">
+                    <span class="command">2. Select Add source</span>
+                </div>
+                <div class="step">
+                    <span class="command">3. Press Enter on &lt;None&gt;</span>
+                </div>
+                <div class="step">
+                    <span class="command">4. Type</span> <span class="url">https://magnetic.website/repo</span> in the text field.
+                </div>
+                <div class="step">
+                    <span class="command">5. Select OK</span> ✔
+                </div>
+                <div class="step">
+                    <span class="command">6. Type "Mad Titan"</span> in the bottom media source name text field.
+                </div>
+                <div class="step">
+                    <span class="command">7. Press OK</span> to add the source.
+                </div>
+                <div class="step">
+                    <span class="command">8. Go back to the Settings menu</span> and select Add-ons.
+                </div>
+                <div class="step">
+                    <span class="command">9. Install from zip file</span>
+                </div>
+                <div class="step">
+                    <span class="command">10. Select Mad Titan</span>
+                </div>
+                <div class="step">
+                    <span class="command">11. Select repository.Magnetic.x.x.zip</span>
+                </div>
+                <div class="step">
+                    <span class="command">12. Install from repository</span>
+                </div>
+                <div class="step">
+                    <span class="command">13. Select Magnetic</span>🧲<span class="command">Repo</span>
+                </div>
+                <div class="step">
+                    <span class="command">14. Select VIDEO add-ons</span>
+                </div>
+                <div class="step">
+                    <span class="command">15. Select Mad Titan Sports</span>
+                </div>
+                <div class="step">
+                    <span class="command">16. Select Install and OK</span> to Additional Add-ons.
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> Mad Titan Sports is now installed!
+                </div>
+            </div>
+
+            <!-- STEP H: SUBTITLES -->
+            <div class="section" id="step-h">
+                <h2><span class="emoji">🗣️</span> H: Subtitles (a4kSubtitles)</h2>
+                <div class="note">
+                    <span class="important">NOTE:</span> <strong>a4kSubtitles</strong> is our main subtitle downloader (installed in Step B). It pulls subtitles from multiple sources at once, so you don't need to hunt for them manually.
+                </div>
+                <h3><i class="fas fa-cog"></i> Configure a4kSubtitles</h3>
+                <div class="step">
+                    <span class="command">1. Open a4kSubtitles:</span> Settings &gt; Add-ons &gt; My add-ons &gt; Program Add-ons &gt; a4kSubtitles &gt; Configure
+                </div>
+                <div class="step">
+                    <span class="command">2. Choose your subtitle source:</span> Inside a4kSubtitles settings, you'll see two OpenSubtitles options:
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>opensubtitles</strong> — uses an OpenSubtitles.com account for more sources</li>
+                        <li><strong>opensubtitles quick</strong> — works with no account needed</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <span class="command">3. Pick whichever fits you:</span> Use "opensubtitles quick" if you don't want an account, or "opensubtitles" if you have one and want access to more subtitles.
+                </div>
+                <div class="step">
+                    <span class="command">4. Enable the sources you want:</span> Turn on any additional subtitle providers you want to use, then press OK to save.
+                </div>
+                
+                <h3><i class="fas fa-user-plus"></i> Optional: OpenSubtitles.com Account</h3>
+                <div class="step">
+                    If you want access to the full OpenSubtitles catalog, you can create a free account at <a class="url" href="https://opensubtitles.com">https://opensubtitles.com</a>, then come back to a4kSubtitles settings and enter your credentials. This step is completely optional — a4kSubtitles works fine without it.
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> Subtitles are now configured.
+                </div>
+            </div>
+
+            <!-- FINAL CONGRATULATIONS -->
+            <div class="finale">
+                <h2>🎉 YOU DID IT! 🎉</h2>
+                <p style="font-size: 1.5em; margin-top: 20px;">YOUR RED LIGHT HOME THEATER IS COMPLETE!</p>
+                <p style="font-size: 1.8em; margin-top: 20px;">ENJOY WITH FAMILY &amp; FRIENDS!</p>
+                <p style="font-size: 2.5em; margin-top: 20px;">🍿 🎬 💖</p>
+                <p style="font-size: 1.8em; margin-top: 20px;"> -Kween</p>
             </div>
         </div>
     </div>
@@ -719,6 +1190,7 @@
         themeToggle.addEventListener('click', () => {
             const currentTheme = body.getAttribute('data-theme') || 'dark';
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
             body.setAttribute('data-theme', newTheme);
             themeToggle.querySelector('span').textContent = newTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
             themeToggle.querySelector('i').className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
