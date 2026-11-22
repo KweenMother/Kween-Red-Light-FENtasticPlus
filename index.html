@@ -1,11 +1,781 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Kween's New Red Light Guide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔴 Kween's Red Light & FENtastic+ Guide 🔴🎬</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Red Light Theme */
+            --primary: #C62828;
+            --primary-light: #EF5350;
+            --secondary: #FFFFFF;
+            --accent: #FFCA28;
+            --dark: #121212;
+            --darker: #000000;
+            --text: #EAEAEA;
+            --card-bg: #1E1E1E;
+            --section-bg: #2C2C2C;
+            --url: #FFCA28;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--dark);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--primary), #8B0000);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--primary-light));
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: transparent;
+            z-index: 1000;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent), var(--primary-light));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .toc-container {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            max-height: 80vh;
+            overflow-y: auto;
+            position: sticky;
+            top: 20px;
+        }
+
+        .toc-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-title i {
+            color: var(--accent);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .toc-list li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .toc-list a {
+            color: var(--text);
+            text-decoration: none;
+            display: block;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+            background: rgba(198, 40, 40, 0.15);
+        }
+
+        .toc-list a:hover {
+            background: rgba(198, 40, 40, 0.3);
+            transform: translateX(5px);
+        }
+
+        .toc-list .active {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--section-bg);
+            border-radius: 30px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--box-shadow);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-3px);
+        }
+
+        .content-container {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        .section {
+            background-color: var(--section-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 35px;
+            box-shadow: var(--box-shadow);
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+            scroll-margin-top: 20px;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            background: linear-gradient(90deg, var(--primary), #8B0000);
+            color: var(--secondary);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--accent);
+        }
+
+        h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            border-bottom: 2px dashed var(--primary);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step {
+            margin-bottom: 18px;
+            padding-left: 25px;
+            border-left: 3px solid var(--primary);
+            position: relative;
+        }
+
+        .step::before {
+            content: "✨";
+            position: absolute;
+            left: -8px;
+            top: -3px;
+            font-size: 1.2rem;
+            color: var(--accent);
+            background: var(--section-bg);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .note {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--accent);
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+        }
+
+        .important {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .success {
+            color: #70E4EF;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 25px;
+            padding: 15px;
+            background-color: rgba(112, 228, 239, 0.1);
+            border-radius: 10px;
+            border: 1px dashed #70E4EF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .command {
+            color: var(--accent);
+            font-weight: bold;
+            font-family: 'Source Code Pro', monospace;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .url {
+            color: var(--url);
+            text-decoration: none;
+            word-break: break-all;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .url:hover {
+            text-decoration: underline;
+        }
+
+        .config-group {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #444;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .config-item {
+            margin: 12px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .config-item::before {
+            content: "👉";
+            position: absolute;
+            left: -5px;
+            color: var(--primary-light);
+        }
+
+        .toggle-on {
+            color: #70E4EF;
+            font-weight: bold;
+        }
+
+        .toggle-off {
+            color: #FF6B6B;
+            font-weight: bold;
+        }
+
+        .finale {
+            background: linear-gradient(135deg, var(--primary), #8B0000);
+            color: var(--secondary);
+            text-align: center;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 3px solid var(--accent);
+        }
+
+        .finale h2 {
+            background: none;
+            color: var(--secondary);
+            border: none;
+        }
+
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #8B0000);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 900px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            .toc-container {
+                position: relative;
+                top: 0;
+                max-height: 300px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .config-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .section {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .step {
+                padding-left: 15px;
+            }
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; padding: 60px; background: #1B1B1B; color: #EAEAEA;">
-  <h1>🚧 Coming Soon 🚧</h1>
-  <p>A brand-new Red Light + FENtastic+ Kodi guide is being built here.</p>
-  <p>Check back soon!</p>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <header id="top">
+        <h1>🔴 Kween's Red Light & FENtastic+ Guide 🔴🎬</h1>
+        <p class="subtitle">Your complete, straight-forward setup companion for the new Red Light era.</p>
+    </header>
+
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+    </div>
+
+    <div class="nav-container">
+        <div class="toc-container">
+            <h2 class="toc-title"><i class="fas fa-bookmark"></i> Navigation</h2>
+            <ul class="toc-list">
+                <li><a href="#accounts">🔑 Accounts and Services</a></li>
+                <li><a href="#source">🏦 The Main Source</a></li>
+                <li><a href="#kodi">⚙️ Kodi Settings</a></li>
+                <li><a href="#install">🧱 Install Add-ons & Skin</a></li>
+                <li><a href="#redlight">🔴 Red Light Configuration</a></li>
+                <li><a href="#skin">🎨 Skin Configuration</a></li>
+                <li><a href="#extras">🏈 Extras (Live TV & Sports)</a></li>
+                <li><a href="#finish">✨ Finish Line</a></li>
+            </ul>
+        </div>
+
+        <div class="content-container" id="content">
+            <!-- ACCOUNTS AND SERVICES -->
+            <div class="section" id="accounts">
+                <h2>🔑 Accounts and Services Needed</h2>
+                <div class="step">
+                    <span class="command">📧 Email address</span><br/>
+                    (for registering and activating various services)
+                </div>
+                <div class="step">
+                    <span class="command">🔄 TraktTV</span><br/>
+                    <a class="url" href="https://trakt.tv">https://trakt.tv</a> (syncing watch history & watchlists). <strong>Recommended over SIMKL</strong> because Trakt saves your movie progress, while SIMKL marks movies as "Watched" the moment you start them.
+                </div>
+                <div class="step">
+                    <span class="command">⚡ Real-Debrid</span><br/>
+                    <a class="url" href="https://real-debrid.com">https://real-debrid.com</a> (#1 choice, required for Red Light)
+                </div>
+                <div class="step">
+                    <span class="command">💎 All Debrid (Optional)</span><br/>
+                    <a class="url" href="https://alldebrid.com">https://alldebrid.com</a> (backup debrid service, 25G/7day free trial)
+                </div>
+                <div class="step">
+                    <span class="command">🎬 OMDB API</span><br/>
+                    <a class="url" href="https://omdbapi.com">omdbapi.com</a> (free API key for ratings)
+                </div>
+                <div class="step">
+                    <span class="command">📋 MDBLIST API</span><br/>
+                    <a class="url" href="https://mdblist.com">mdblist.com</a> (free API key for ratings & lists)
+                </div>
+                <div class="step">
+                    <span class="command">🗣️ OpenSubtitles (Optional)</span><br/>
+                    <a class="url" href="https://opensubtitles.com">opensubtitles.com</a> (for subtitles)
+                </div>
+                <div class="step">
+                    <span class="command">📥 Kodi</span><br/>
+                    Download from <a class="url" href="https://kodi.tv/download">kodi.tv/download</a>, Google Play Store, or Microsoft Store.
+                </div>
+                <div class="note">
+                    <span class="important">PRO TIP:</span> Use an On-The-Go (OTG) cable and a mini keyboard to speed up installation. A Rii X8 is highly recommended.
+                </div>
+            </div>
+
+            <!-- THE MAIN SOURCE -->
+            <div class="section" id="source">
+                <h2>🏦 The Main Source: Red Wizard Repo</h2>
+                <div class="step">
+                    We will use <strong>one main source</strong> for almost everything. The Red Wizard Repo contains Red Light, Gears Scrapers, Cocoscrapers, FENtastic+, The Loop, YouTube, and more. This saves you from adding many separate sources.
+                </div>
+                <div class="step">
+                    <span class="command">Source URL:</span> <span class="url">https://repo.redwizard.xyz</span>
+                </div>
+                <div class="note">
+                    <span class="important">NOTE:</span> The Crew and Mad Titan Sports still require their own separate sources. We will add those later in the Extras section.
+                </div>
+                <h3><i class="fas fa-external-link-alt"></i> Separate Sources (For Later)</h3>
+                <div class="step">
+                    <span class="command">FENtastic+ Skin:</span> <span class="url">https://zaxxon709.github.io/repo/</span> (The 709 Repository) — This is the updated source for the FENtastic+ skin.
+                </div>
+                <div class="step">
+                    <span class="command">The Crew:</span> <span class="url">https://team-crew.github.io</span>
+                </div>
+                <div class="step">
+                    <span class="command">Mad Titan Sports:</span> <span class="url">https://magnetic.website/repo</span>
+                </div>
+            </div>
+
+            <!-- KODI SETTINGS -->
+            <div class="section" id="kodi">
+                <h2>⚙️ A: Kodi Settings (Before Installing Add-ons)</h2>
+                <div class="step">
+                    <span class="command">1. Open Kodi</span> and select the ⚙ <strong>Settings</strong> gear icon.
+                </div>
+                <div class="step">
+                    <span class="command">2. Enable Unknown Sources:</span> System > Add-ons > Unknown sources = <span class="toggle-on">ON</span>
+                </div>
+                
+                <h3><i class="fas fa-film"></i> Player Settings (Set to "Expert")</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Player > Videos ></span> Adjust display refresh rate = <span class="toggle-off">Off</span></div>
+                    <div class="config-item"><span class="command">Player > Videos ></span> Sync playback to display = <span class="toggle-on">Enabled</span></div>
+                    <div class="config-item"><span class="command">Player > Videos ></span> Allow hardware acceleration = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Player > Videos ></span> Allow use DXVA video super resolution = <span class="toggle-off">OFF</span> <em>(Keep disabled unless you have high-end hardware like an NVIDIA RTX or Intel Arc GPU. It can cause playback issues on most streaming boxes.)</em></div>
+                </div>
+
+                <h3><i class="fas fa-database"></i> Media Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Media > General ></span> Show parent folder items = <span class="toggle-off">Off</span></div>
+                    <div class="config-item"><span class="command">All other Media settings</span> are already set correctly by default. No further changes needed.</div>
+                </div>
+
+                <h3><i class="fas fa-cog"></i> System Settings</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">System > Audio ></span> Output configuration = <span class="toggle-on">Best match</span></div>
+                    <div class="config-item"><span class="command">System > Add-ons ></span> Updates = <span class="toggle-off">Never check for updates</span></div>
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> Kodi settings are ready!
+                </div>
+            </div>
+
+            <!-- INSTALL ADD-ONS & SKIN -->
+            <div class="section" id="install">
+                <h2>🧱 B: Install Add-ons & Skin (From Red Wizard Repo)</h2>
+                <div class="step">
+                    <span class="command">1. Add the Red Wizard Source:</span> Settings > File Manager > Add source > Enter <span class="url">https://repo.redwizard.xyz</span> > Name it "Red Repo".
+                </div>
+                <div class="step">
+                    <span class="command">2. Install the Repository:</span> Go back to Settings > Add-ons > Install from zip file > Select "Red Repo" > Select <code>repository.redwizard.zip</code>.
+                </div>
+                <div class="step">
+                    <span class="command">3. Install Gears Scrapers (Primary Scraper):</span> Install from repository > The Red Repo > <strong>Program add-ons</strong> > Gears Scrapers > Install.
+                </div>
+                <div class="step">
+                    <span class="command">4. Install Cocoscrapers (Backup Scraper):</span> In the same Program add-ons list, select <strong>Cocoscrapers</strong> > Install. <em>(Having both gives you a safety net.)</em>
+                </div>
+                <div class="step">
+                    <span class="command">5. Install Red Light:</span> Go back to The Red Repo > <strong>Video add-ons</strong> > Red Light > Install.
+                </div>
+                <div class="step">
+                    <span class="command">6. Install YouTube (for Trailers):</span> In Video add-ons, select <strong>YouTube</strong> > Install.
+                </div>
+                <div class="step">
+                    <span class="command">7. Install FENtastic+ Skin:</span> Go back to <strong>Install from repository</strong> > Choose <strong>709 Repository</strong> (you may need to add the source from the "Main Source" section first) > <strong>Look and feel</strong> > <strong>Skin</strong> > <strong>FENtastic</strong> > Install.
+                </div>
+                <div class="note">
+                    <span class="important">NOTE:</span> The Red Wizard Repo also contains a <strong>4K Subtitles</strong> repository. This is an alternative subtitle downloader. You can safely ignore it for now; your main subtitle setup will be handled later.
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> All core add-ons and the skin are installed!
+                </div>
+            </div>
+
+            <!-- RED LIGHT CONFIGURATION -->
+            <div class="section" id="redlight">
+                <h2>🔴 C: Red Light Configuration</h2>
+                <div class="note">
+                    <span class="important">NOTE:</span> Red Light has many settings. We will focus on the essentials. You can fine-tune the rest later.
+                </div>
+                <h3><i class="fas fa-user"></i> Accounts Tab (The Essentials)</h3>
+                <div class="step">
+                    <span class="command">1. Authorize Trakt:</span> Open Red Light > Tools > Settings > <strong>Accounts</strong> > Trakt > Authorize. Follow the on-screen code at <span class="url">trakt.tv/activate</span>.
+                </div>
+                <div class="step">
+                    <span class="command">2. Authorize Real-Debrid:</span> Accounts > Real-Debrid > Authorize. Follow the code at <span class="url">real-debrid.com/devices</span>.
+                </div>
+                <div class="step">
+                    <span class="command">3. Enable Gears Scrapers:</span> Accounts > <strong>External Scrapers</strong> > Enable = <span class="toggle-on">ON</span> > Choose External Scrapers Module > Select <strong>Gears Scrapers</strong>.
+                </div>
+                <div class="step">
+                    <span class="command">4. (Optional) Enable Cocoscrapers as Backup:</span> If you want a second scraper, select <strong>Cocoscrapers Module</strong> from the same list. It will be used if Gears fails.
+                </div>
+                
+                <h3><i class="fas fa-sliders-h"></i> General Settings (Recommended)</h3>
+                <div class="config-group">
+                    <div class="config-item"><span class="command">Playback > Movies ></span> Auto Play = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Playback > Episodes ></span> Auto Play = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Playback > Episodes ></span> Autoplay next episode = <span class="toggle-on">ON</span></div>
+                    <div class="config-item"><span class="command">Results > Display ></span> Scraper timeout = <span class="toggle-on">5</span> (increase to 10 if you get no sources)</div>
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> Red Light is now configured with the best scrapers!
+                </div>
+            </div>
+
+            <!-- SKIN CONFIGURATION -->
+            <div class="section" id="skin">
+                <h2>🎨 D: FENtastic+ Skin Configuration</h2>
+                <div class="step">
+                    <span class="command">1. Go to Settings > Skin settings</span>
+                </div>
+                <div class="step">
+                    <span class="command">2. Main menu items > Remake menus and widgets > OK</span> (This resets to a clean slate).
+                </div>
+                <div class="step">
+                    <span class="command">3. Set Movies Menu:</span> Main menu items > Movies > Set main menu path > <strong>Red Light</strong> > Movies > Use as path.
+                </div>
+                <div class="step">
+                    <span class="command">4. Set TV Shows Menu:</span> Main menu items > TV Shows > Set main menu path > <strong>Red Light</strong> > TV Shows > Use as path.
+                </div>
+                <div class="step">
+                    <span class="command">5. Add Widgets (Optional but Recommended):</span> Under Movies and TV Shows, select <strong>Set widgets</strong> > Widget 1 > <strong>Red Light</strong> > Movies/TV Shows > <strong>Trending</strong> > Use as path. Choose <strong>Poster</strong> for the display type.
+                </div>
+                <div class="step">
+                    <span class="command">6. Enter MDBLIST API Key:</span> Skin settings > <strong>Ratings/Trailers</strong> > Enter your MDBLIST API key and enable all options.
+                </div>
+                <div class="step">
+                    <span class="command">7. Set Search Provider:</span> Skin settings > <strong>Search</strong> > Set Search Provider = <strong>Red Light</strong>.
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> Your FENtastic+ skin is now personalized!
+                </div>
+            </div>
+
+            <!-- EXTRAS -->
+            <div class="section" id="extras">
+                <h2>🏈 E: Extras (Live TV, Sports & Trailers)</h2>
+                
+                <h3><i class="fas fa-sync"></i> The Loop (Live TV & Sports)</h3>
+                <div class="step">
+                    <span class="command">1. From the Red Wizard Repo:</span> Install from repository > The Red Repo > Video add-ons > <strong>The Loop</strong> > Install.
+                </div>
+                <div class="step">
+                    <span class="command">2. Also install Jet Proxy:</span> It will be listed as an additional add-on. Install it for smooth playback.
+                </div>
+
+                <h3><i class="fas fa-football-ball"></i> The Crew (Sports)</h3>
+                <div class="step">
+                    <span class="command">1. Add Source:</span> File Manager > Add source > <span class="url">https://team-crew.github.io</span> > Name it "The Crew".
+                </div>
+                <div class="step">
+                    <span class="command">2. Install Repo:</span> Install from zip file > The Crew > <code>repository.thecrew-x.x.zip</code>.
+                </div>
+                <div class="step">
+                    <span class="command">3. Install Add-on:</span> Install from repository > The Crew Repo > Video add-ons > The Crew > Install.
+                </div>
+                <div class="note">
+                    <span class="important">NOTE:</span> DaddyLive has been removed from this guide. The Crew remains for sports.
+                </div>
+
+                <h3><i class="fas fa-football-ball"></i> Mad Titan Sports</h3>
+                <div class="step">
+                    <span class="command">1. Add Source:</span> File Manager > Add source > <span class="url">https://magnetic.website/repo</span> > Name it "Mad Titan".
+                </div>
+                <div class="step">
+                    <span class="command">2. Install Repo:</span> Install from zip file > Mad Titan > <code>repository.Magnetic-x.x.zip</code>.
+                </div>
+                <div class="step">
+                    <span class="command">3. Install Add-on:</span> Install from repository > Magnetic Repo > Video add-ons > Mad Titan Sports > Install.
+                </div>
+
+                <h3><i class="fas fa-play-circle"></i> YouTube (For Trailers)</h3>
+                <div class="step">
+                    <span class="command">Already installed in Step B.</span> The first time you play a trailer, YouTube will ask you to configure settings. Follow the on-screen wizard (English, region, recommended settings) and you're done. No SlyGuy needed.
+                </div>
+                <div class="success">
+                    <span class="emoji">✅</span> All extras are installed!
+                </div>
+            </div>
+
+            <!-- FINISH LINE -->
+            <div class="section" id="finish">
+                <h2>✨ F: Finish Line & Final Notes</h2>
+                <div class="step">
+                    <span class="command">Subtitles:</span> For subtitles, go to Settings > Add-ons > Install from repository > Kodi Add-on Repository > Subtitles > <strong>OpenSubtitles.com</strong> > Install. Configure it with your username and password.
+                </div>
+                <div class="step">
+                    <span class="command">4K Subtitles:</span> If you want an alternative, the <strong>4K Subtitles</strong> add-on is available in the Red Wizard Repo under Program add-ons. It works similarly to OpenSubtitles.
+                </div>
+                <div class="note">
+                    <span class="important">REMINDER:</span> SIMKL was considered for watch tracking, but Trakt is recommended because it saves your movie progress. SIMKL marks movies as finished as soon as you start them, which is not ideal for most users.
+                </div>
+                <div class="finale">
+                    <h2>🎉 YOU DID IT! 🎉</h2>
+                    <p style="font-size: 1.5em; margin-top: 20px;">YOUR RED LIGHT HOME THEATER IS COMPLETE!</p>
+                    <p style="font-size: 2.5em; margin-top: 20px;">🍿 🎬 💖</p>
+                    <p style="font-size: 1.8em; margin-top: 20px;"> -Kween</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-buttons">
+        <a href="#top" class="floating-btn" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            themeToggle.querySelector('span').textContent = newTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
+            themeToggle.querySelector('i').className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+            localStorage.setItem('theme', newTheme);
+        });
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.setAttribute('data-theme', savedTheme);
+            themeToggle.querySelector('span').textContent = savedTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
+            themeToggle.querySelector('i').className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+        
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.toc-list a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        document.querySelector('.floating-btn[href="#top"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        const progressBar = document.getElementById('progressBar');
+        window.addEventListener('scroll', () => {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.pageYOffset / totalHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+    </script>
 </body>
 </html>
